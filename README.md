@@ -1,6 +1,6 @@
-# test_app
+# Dummy app created to teach fellow colleagues Flutter
 
-A new Flutter project.
+A sample flutter app. 
 
 ## Getting Started
 
