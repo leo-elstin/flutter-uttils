@@ -54,32 +54,35 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           // Navigator.pushNamed(context, 'second-page');
           showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  title: Text('Hellooo'),
-                  actions: <Widget>[
-                    ButtonBar(
-                      children: <Widget>[
-                        RaisedButton(
-                          child: Text(
-                            'Yes',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          onPressed: () {},
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: Text(
+                  'Hellooo',
+                ),
+                actions: <Widget>[
+                  ButtonBar(
+                    children: <Widget>[
+                      RaisedButton(
+                        child: Text(
+                          'Yes',
+                          style: TextStyle(color: Colors.white),
                         ),
-                        RaisedButton(
-                          child: Text(
-                            'Cancel',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          onPressed: () =>  Navigator.of(context).pop(),
-                        )
-                      ],
-                    ),
-                  ],
-                );
-              });
+                        onPressed: () {},
+                      ),
+                      RaisedButton(
+                        child: Text(
+                          'Cancel',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        onPressed: () => Navigator.of(context).pop(),
+                      )
+                    ],
+                  ),
+                ],
+              );
+            },
+          );
         },
       ),
       drawer: Drawer(),
