@@ -10,12 +10,19 @@ class Listpage extends StatefulWidget {
 }
 
 class _ListpageState extends State<Listpage> {
+  ScrollController _scrollController = ScrollController();
+
   List<OfferList> _list = [];
 
   @override
   void initState() {
     super.initState();
     getData();
+    _scrollController.addListener((){
+      if(_scrollController.position.pixels == _scrollController.position.maxScrollExtent) {
+        print('Yes');
+      }
+    });
   }
 
   @override
@@ -27,6 +34,7 @@ class _ListpageState extends State<Listpage> {
         ),
         body: _list.length > 0
             ? ListView.builder(
+                controller: _scrollController,
                 itemCount: _list.length,
                 itemBuilder: (context, index) {
                   OfferList data = _list[index];
